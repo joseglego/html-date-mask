@@ -1,0 +1,26 @@
+{
+  "name": "html-date-mask",
+  "homepage": "https://github.com/joseglego/html-date-mask",
+  "authors": [
+    "Jose Lezama Gonzalez <joseglego@gmail.com>"
+  ],
+  "description": "A html mask to show dates in a better way",
+  "main": "index.html",
+  "keywords": [
+    "html",
+    "date",
+    "mask"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.10.2",
+    "datetimepicker": "^2.5.4"
+  }
+}
