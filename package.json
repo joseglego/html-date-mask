@@ -23,6 +23,8 @@
   "homepage": "https://github.com/joseglego/html-date-mask#readme",
   "devDependencies": {
     "browser-sync": "^2.18.13",
+    "eslint-plugin-import": "^2.7.0",
     "gulp": "^3.9.1",
+    "gulp-eslint": "^4.0.0"
   }
 }
