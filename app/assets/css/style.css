@@ -1,0 +1,58 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+h1 {
+  width: 1280px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+}
+
+h4 {
+  font-family: 'Roboto', sans-serif;
+  border-bottom: 1px solid #3f3f3f;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.write, .show {
+  order: 1;
+  padding: 20px;
+}
+
+.write {
+  flex-grow: 1;
+}
+
+.show {
+  border-left: 1px solid #3f3f3f;
+  flex-grow: 2;
+}
+
+#original, #processing {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield
+  display: inline-block;
+  border: 1px solid darkgray;
+  box-shadow: 1px 1px 1px 0 lightgray inset;
+  border-radius: 3px;
+  padding: 10px;
+
+}
+
+#processing b {
+  font-size: 1.1em;
+}
+
+#processing span {
+  color: #969696;
+  font-size: 0.95em;
+}

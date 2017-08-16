@@ -2,6 +2,7 @@
 <html>
   <head>
     <!-- Begin: CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="bower_components/datetimepicker/build/jquery.datetimepicker.min.css" >
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- End: CSS -->
@@ -15,13 +16,22 @@
 
   <body>
     <h1>Hello DateTimePicker!</h1>
-    <h3>To Show:</h3>
-    <h4>NO Processing</h4>
-    <div id="original"></div>
-    <hr />
-    <h4>Processing</h4>
-    <div id="processing"></div>
-    <h3>/ToShow</h3>
-    <input id="datetimepicker" type="text" >
+    <div class="container">
+      <div class="write">
+        <h3>Write</h3>
+        <input id="datetimepicker" type="text" >
+      </div>
+      <div class="show">
+        <h3>Show</h3>
+        <div class="item">
+          <h4>NO Processing</h4>
+          <div id="original"></div>
+        </div>
+        <div class="item">
+          <h4>Processing</h4>
+          <div id="processing"></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
