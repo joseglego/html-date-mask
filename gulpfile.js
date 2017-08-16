@@ -6,10 +6,7 @@ var eslint      = require('gulp-eslint');
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: "./app",
-      routes: {
-        "/bower_components": "bower_components"
-      }
+      baseDir: "./app"
     }
   });
 });
