@@ -1,33 +1,29 @@
 // Code goes here
 $(document).ready(function () {
-  var format = 'd.m.Y H:i';
-  var formatTime = 'H:i A';
-  var formatDate = 'd F, Y';
+  const format = 'd.m.Y H:i';
+  const formatTime = 'H:i A';
+  const formatDate = 'd F, Y';
 
-  function setValue (value) {
-    var fmt = new DateFormatter();
-    var myDate = fmt.parseDate(value, format);
-    var date = document.createElement('b');
-    var time = document.createElement('span');
-    $('#original').html(value);
+  function setValue(input) {
+    const value = input.val();
+    const fmt = new DateFormatter();
+    const myDate = fmt.parseDate(value, format);
+    const date = document.createElement('b');
+    const time = document.createElement('span');
     if (myDate) {
       date.innerHTML = fmt.formatDate(myDate, formatDate);
       time.innerHTML = fmt.formatDate(myDate, formatTime);
-      $('#processing').text('');
-      $('#processing').append(date, '<br/>' ,time);
+      $(input).text('');
+      $(input).append(date, '<br/>', time);
     } else {
-      $('#processing').html('Not VALID');
+      $(input).html('Not VALID');
     }
   }
 
-  $('#datetimepicker').datetimepicker({
+  $('.visual-datetime').datetimepicker({
     timepicker: true,
     format: format,
     onChangeDateTime: function (dp, $input) {
-      setValue($input.val());
+      setValue($input);
     } });
-
-  $('#datetimepicker').on('keyup', function () {
-    setValue(this.value);
-  });
 });
