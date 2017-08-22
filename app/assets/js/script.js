@@ -10,17 +10,28 @@ $(document).ready(function () {
     const myDate = fmt.parseDate(value, format);
     const date = document.createElement('b');
     const time = document.createElement('span');
+    const suffixNameLength = 16;
+    const hiddenInputId = $(input).attr('id').substring(suffixNameLength);
+
     if (myDate) {
       date.innerHTML = fmt.formatDate(myDate, formatDate);
       time.innerHTML = fmt.formatDate(myDate, formatTime);
       $(input).text('');
       $(input).append(date, '<br/>', time);
+      $(`#${hiddenInputId}`).val(myDate);
     } else {
       $(input).html('Not VALID');
     }
   }
 
-  $('.visual-datetime').datetimepicker({
+  $('.visual-datetime').each(function () {
+    const parent = $(this).parent();
+    const id = $(this).attr('id');
+    $(this).css('display', 'none');
+    $(parent).append(`<div id="visual-datetime-${id}" class="visual-datetime-view"></div>`);
+  });
+
+  $('.visual-datetime-view').datetimepicker({
     timepicker: true,
     format: format,
     onChangeDateTime: function (dp, $input) {

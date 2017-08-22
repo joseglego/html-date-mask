@@ -14,7 +14,7 @@ h1, h2 {
   display: flex;
 }
 
-.visual-datetime {
+.visual-datetime-view {
   position: relative;
   display: block;
   -moz-appearance: textfield;
@@ -26,11 +26,11 @@ h1, h2 {
   height: 40px;
 }
 
-.visual-datetime b {
+.visual-datetime-view b {
   font-size: 1.1em;
 }
 
-.visual-datetime span {
+.visual-datetime-view span {
   color: #969696;
   font-size: 0.95em;
 }
