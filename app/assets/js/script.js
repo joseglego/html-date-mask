@@ -29,6 +29,7 @@ $(document).ready(function () {
     const id = $(this).attr('id');
     $(this).css('display', 'none');
     $(parent).append(`<div id="visual-datetime-${id}" class="visual-datetime-view"></div>`);
+    $(parent).append(`<a href="#" class="visual-datetime-clear" target="${id}">Clear</a>`);
   });
 
   $('.visual-datetime-view').datetimepicker({
@@ -37,4 +38,11 @@ $(document).ready(function () {
     onChangeDateTime: function (dp, $input) {
       setValue($input);
     } });
+
+  $('.visual-datetime-clear').on('click', function (event) {
+    event.preventDefault();
+    const inputId = $(this).attr('target');
+    $(`#${inputId}`).val('');
+    $(`#visual-datetime-${inputId}`).html('');
+  });
 });

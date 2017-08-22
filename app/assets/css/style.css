@@ -35,6 +35,9 @@ h1, h2 {
   font-size: 0.95em;
 }
 
+.visual-datetime-clear {
+  float: right;
+}
 .input-container {
   order:1;
   margin-left: 10px;
