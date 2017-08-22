@@ -10,8 +10,7 @@ $(document).ready(function () {
     const myDate = fmt.parseDate(value, format);
     const date = document.createElement('b');
     const time = document.createElement('span');
-    const suffixNameLength = 16;
-    const hiddenInputId = $(input).attr('id').substring(suffixNameLength);
+    const hiddenInputId = $(input).attr('data-target');
 
     if (myDate) {
       date.innerHTML = fmt.formatDate(myDate, formatDate);
@@ -28,8 +27,8 @@ $(document).ready(function () {
     const parent = $(this).parent();
     const id = $(this).attr('id');
     $(this).css('display', 'none');
-    $(parent).append(`<div id="visual-datetime-${id}" class="visual-datetime-view"></div>`);
-    $(parent).append(`<a href="#" class="visual-datetime-clear" target="${id}">Clear</a>`);
+    $(parent).append(`<div class="visual-datetime-view" data-vdt-target="${id}"></div>`);
+    $(parent).append(`<a href="#" class="visual-datetime-clear" data-vdt-target="${id}">Clear</a>`);
   });
 
   $('.visual-datetime-view').datetimepicker({
@@ -41,8 +40,8 @@ $(document).ready(function () {
 
   $('.visual-datetime-clear').on('click', function (event) {
     event.preventDefault();
-    const inputId = $(this).attr('target');
+    const inputId = $(this).attr('data-vdt-target');
     $(`#${inputId}`).val('');
-    $(`#visual-datetime-${inputId}`).html('');
+    $(`.visual-datetime-view[data-vdt-target=${inputId}]`).html('');
   });
 });
