@@ -35,9 +35,15 @@ h1, h2 {
   font-size: 0.95em;
 }
 
-.visual-datetime-clear {
+.visual-datetime-clear, .visual-datetime-toggle {
   float: right;
+  padding: 5px 0 5px 10px;
 }
+
+.visual-datetime-hide {
+  display: none;
+}
+
 .input-container {
   order:1;
   margin-left: 10px;
